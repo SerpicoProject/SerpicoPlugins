@@ -1,0 +1,8 @@
+{
+  "name": "ExtraFindings",
+  "description": "A collection of findings from other projects.",
+  "link":"/ExtraFindings/import",
+  "enabled": false,
+  "report_view": false,
+  "admin_view": true
+}

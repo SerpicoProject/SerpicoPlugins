@@ -1,0 +1,30 @@
+.span10
+- if @success
+  Imported findings, view findings
+  %a{ :href => "/master/findings"} here
+- else
+  %form{:method => 'post', :action => '/ExtraFindings/import'}
+    .table
+      %table{:style => 'width: 60%'}
+        %tbody
+          %tr
+            %td
+              Source
+            %td
+              License
+            %td
+              Include
+            %td
+              Label
+
+          - @sets.each do |item|
+            %tr
+              %td
+                %a{ :href => "#{item["link"]}"} #{item["name"]}
+              %td
+                %a{ :href => "#{item["license_link"]}"} #{item["license"]}
+              %td
+                %input{:type => 'checkbox', :name => "#{item['name']}"}
+    %input{:type => 'submit', :value => 'Import Checked Items' }
+      %a{ :href => "/ExtraFindings/import"}
+    %input{ :type => "button", :value => 'Cancel'}

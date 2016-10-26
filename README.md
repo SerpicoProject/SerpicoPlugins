@@ -3,5 +3,5 @@ This repository includes plugins for Serpico. The [wiki](https://github.com/Serp
 
 
 Plug-ins are ideally suited to:
-- add functionality that involves third party components
-- proto-typing functionality.
+- Add functionality that involves third party components
+- Proto-typing functionality
