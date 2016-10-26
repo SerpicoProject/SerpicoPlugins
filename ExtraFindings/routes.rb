@@ -14,7 +14,7 @@ get '/ExtraFindings/import' do
 	a["license_link"] = "https://github.com/vulndb/data/blob/master/LICENSE.md"
 	@sets.push(a)
 
-	haml :'../plugins/ExtraFindings/views/import', :encode_html => true
+	haml :'#{Dir.pwd()}/views/import', :encode_html => true
 end
 
 post '/ExtraFindings/import' do
@@ -23,7 +23,7 @@ post '/ExtraFindings/import' do
 		options.finding_types.push("VulnDB")
 	end
 	@success = "Imported findings"
-	haml :'../plugins/ExtraFindings/views/import', :encode_html => true
+	haml : '#{Dir.pwd()}/views/import', :encode_html => true
 end
 
 # Simple helper method rather than hand cleaning every string
