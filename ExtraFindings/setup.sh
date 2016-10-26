@@ -1,0 +1,1 @@
+git clone https://github.com/vulndb/data.git data/VulnDB

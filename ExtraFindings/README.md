@@ -1,8 +1,8 @@
 # Prerequisites
 
-This project requires third party findings. From this directory (e.g. plugins/ExtraFindings/)
+This project requires third party findings. To get setup run:
 ```
-cd data
-git clone https://github.com/vulndb/data.git VulnDB
+chmod +x setup.sh
+./setup.sh
 ```
 
