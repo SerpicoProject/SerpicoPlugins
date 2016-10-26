@@ -36,7 +36,7 @@ end
 
 def import_vulndb()
 	# Iterate the VulnDB database
-	vulndb_dir = "./plugins/ExtraFindings/data/VulnDB/db/"
+	vulndb_dir = Dir.pwd()+"./data/VulnDB/db/"
 	Dir.entries(vulndb_dir).each do |json_file|
 		next if json_file == "." or json_file == ".."
 
