@@ -2,6 +2,8 @@ require 'sinatra'
 require 'json'
 require './model/master'
 
+# TODO we should have a way to force setup to occur
+
 get '/ExtraFindings/import' do
 	# for now hand write the findings to import
 	@sets = []
@@ -14,7 +16,7 @@ get '/ExtraFindings/import' do
 	a["license_link"] = "https://github.com/vulndb/data/blob/master/LICENSE.md"
 	@sets.push(a)
 
-	haml :"#{Dir.pwd()}/views/import", :encode_html => true
+	haml :"../plugins/SerpicoPlugins/views/import", :encode_html => true
 end
 
 post '/ExtraFindings/import' do
@@ -23,7 +25,7 @@ post '/ExtraFindings/import' do
 		options.finding_types.push("VulnDB")
 	end
 	@success = "Imported findings"
-	haml :"#{Dir.pwd()}/views/import", :encode_html => true
+	haml :"../plugins/SerpicoPlugins/views/import", :encode_html => true
 end
 
 # Simple helper method rather than hand cleaning every string
@@ -36,7 +38,7 @@ end
 
 def import_vulndb()
 	# Iterate the VulnDB database
-	vulndb_dir = Dir.pwd()+"./data/VulnDB/db/"
+	vulndb_dir = "../plugins/SerpicoPlugins/data/VulnDB/db/"
 	Dir.entries(vulndb_dir).each do |json_file|
 		next if json_file == "." or json_file == ".."
 
