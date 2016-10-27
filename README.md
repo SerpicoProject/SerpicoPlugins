@@ -11,12 +11,8 @@ Plug-ins are ideally suited to:
 ## Install the Project
 From the Serpico project root directory:
 ```
-cd plugins
-git clone https://github.com/SerpicoProject/SerpicoPlugins.git
+git clone https://github.com/SerpicoProject/SerpicoPlugins.git plugins
 ```
 
 ## Enable the plugin
-To enable a plugin, modify the config.json file included in the plugin. Specifically:
-```
-enabled: true
-```
+Plugins can be enabled from the Administrative Plug-in https://IP:8443/admin/admin_plugins
