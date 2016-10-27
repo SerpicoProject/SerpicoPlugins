@@ -15,4 +15,4 @@ git clone https://github.com/SerpicoProject/SerpicoPlugins.git plugins
 ```
 
 ## Enable the plugin
-Plugins can be enabled from the Administrative Plug-in https://IP:8443/admin/admin_plugins
+Plugins can be enabled from the Administrative Plug-in Menu; https://IP:8443/admin/admin_plugins
