@@ -5,7 +5,7 @@ require './model/master'
 # TODO doesn't enforce roles properly
 
 get '/ExtraFindings/import' do
-	if !File.file?("#{Dir.pwd()}/plugins/SerpicoPlugins/ExtraFindings/installed")
+	if !File.file?("#{Dir.pwd()}/plugins/ExtraFindings/installed")
 		return "Please run setup.sh for the ExtraFindings plugin."
 	end
 
