@@ -2,9 +2,7 @@ require 'sinatra'
 require 'json'
 require './model/master'
 
-# TODO we should have a way to force setup to occur or else this breaks
 # TODO doesn't enforce roles properly
-# TODO
 
 get '/ExtraFindings/import' do
 	if !File.file?("#{Dir.pwd()}/plugins/SerpicoPlugins/ExtraFindings/installed")
@@ -22,7 +20,7 @@ get '/ExtraFindings/import' do
 	a["license_link"] = "https://github.com/vulndb/data/blob/master/LICENSE.md"
 	@sets.push(a)
 
-	haml :"../plugins/SerpicoPlugins/ExtraFindings/views/import", :encode_html => true
+	haml :"../plugins/ExtraFindings/views/import", :encode_html => true
 end
 
 post '/ExtraFindings/import' do
@@ -31,7 +29,7 @@ post '/ExtraFindings/import' do
 		options.finding_types.push("VulnDB")
 	end
 	@success = "Imported findings"
-	haml :"../plugins/SerpicoPlugins/ExtraFindings/views/import", :encode_html => true
+	haml :"../plugins/ExtraFindings/views/import", :encode_html => true
 end
 
 # Simple helper method rather than hand cleaning every string
@@ -44,7 +42,7 @@ end
 
 def import_vulndb()
 	# Iterate the VulnDB database
-	vulndb_dir = "#{Dir.pwd()}/plugins/SerpicoPlugins/ExtraFindings/data/VulnDB/db/"
+	vulndb_dir = "#{Dir.pwd()}/plugins/ExtraFindings/data/VulnDB/db/"
 	Dir.entries(vulndb_dir).each do |json_file|
 		next if json_file == "." or json_file == ".."
 
