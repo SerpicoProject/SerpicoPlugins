@@ -2,9 +2,15 @@ require 'sinatra'
 require 'json'
 require './model/master'
 
-# TODO we should have a way to force setup to occur
+# TODO we should have a way to force setup to occur or else this breaks
+# TODO doesn't enforce roles properly
+# TODO
 
 get '/ExtraFindings/import' do
+	if !File.file?("#{Dir.pwd()}/plugins/SerpicoPlugins/ExtraFindings/installed")
+		return "Please run setup.sh for the ExtraFindings plugin."
+	end
+
 	# for now hand write the findings to import
 	@sets = []
 
@@ -38,7 +44,7 @@ end
 
 def import_vulndb()
 	# Iterate the VulnDB database
-	vulndb_dir = "../plugins/SerpicoPlugins/ExtraFindings/data/VulnDB/db/"
+	vulndb_dir = "#{Dir.pwd()}/plugins/SerpicoPlugins/ExtraFindings/data/VulnDB/db/"
 	Dir.entries(vulndb_dir).each do |json_file|
 		next if json_file == "." or json_file == ".."
 
