@@ -1,0 +1,7 @@
+vulndb>=0.0.8
+requests
+jsonschema
+pyopenssl
+ndg-httpsclient
+pyasn1
+markdown
