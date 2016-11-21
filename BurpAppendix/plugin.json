@@ -1,0 +1,8 @@
+{
+  "name": "BurpAppendix",
+  "description": "This plug-in generates a branded document from Burp XML data.",
+  "link":"/BurpAppendix/import",
+  "enabled": false,
+  "report_view": true,
+  "admin_view": false
+}
