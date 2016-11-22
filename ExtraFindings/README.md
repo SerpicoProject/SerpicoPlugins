@@ -4,11 +4,4 @@ This project includes findings from other projects to help you grow your finding
 
 - VulnDB
 
-# Prerequisites
-
-This project requires third party findings. To get setup run:
-```
-chmod +x setup.sh
-./setup.sh
-```
 

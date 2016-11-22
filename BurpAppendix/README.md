@@ -1,6 +1,6 @@
 # Overview
 
-This plug-in generates a branded word document from BurpSuite results XML import.
+This plug-in generates a branded word document from BurpSuite results XML import. Currently, can only be run from the CLI, access via UI should be soon.
 
 # Command Line
 
