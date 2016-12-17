@@ -1,7 +1,7 @@
 {
   "name": "Auth_Mode",
   "description": "WARNING: Disables all authentication. See the README for instructions.",
-  "enabled": true,
+  "enabled": false,
   "report_view": false,
   "admin_view": false
 }
