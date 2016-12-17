@@ -8,7 +8,12 @@ Plug-ins are ideally suited to:
 
 # Installation
 
-## Install the Project
+## Install the Plugin
+
+### Preferred Installation
+Ideally plug-ins should be individually installed following the instructions (here)[https://github.com/SerpicoProject/Serpico/wiki/Plug-ins#pre-built-version]
+
+### Developers
 From the Serpico project root directory:
 ```
 git clone https://github.com/SerpicoProject/SerpicoPlugins.git plugins
