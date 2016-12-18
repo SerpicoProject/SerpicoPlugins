@@ -1,0 +1,87 @@
+.span10
+  - if @admin
+    %h3
+      Existing Questions
+    %form{:method => 'post', :action => '/UDV_Worksheet/sheet?admin_view=true'}
+      .table.table-striped
+        %table{:style => 'width: 40%'}
+          %tbody
+            %tr
+              %td
+                UDV NAME
+              %td
+                Question
+              %td
+                Default Answer
+              %td
+                Delete?
+            - if @questions
+              - if @questions.size > 0
+                - @questions.each do |item|
+                  %tr
+                    %td
+                      %input{:type => 'text', :name => "udv_name", :value => "#{item["udv_name"]}"}
+                    %td
+                      %textarea{:rows => '3', :class => 'input-xlarge', :name => "question"}
+                        - if item['question']
+                          #{meta_markup(item['question'])}
+                    %td
+                      %textarea{:rows => '3', :class => 'input-xlarge', :name => "question_answer"}
+                        - if item['question_answer']
+                          #{meta_markup(item['question_answer'])}
+                    %td
+                      %a{ :class => "btn btn-danger btn-sm", :href => "/UDV_Worksheet/sheet?admin_view=true&delete=#{item["id"]}"} X
+    %form{:method => 'post', :action => '/UDV_Worksheet/sheet?admin_view=true'}
+      %br
+      %br
+      %h3
+        Add a new question
+      .table
+        %table{:style => 'width: 60%'}
+          %tbody
+            %tr
+              %td
+                User Defined Variable Name
+              %td
+                %input{:type => 'text', :name => "udv_name", :required => true, :value => ""}
+            %tr
+              %td
+                Question to Ask
+              %td
+                %textarea{:rows => '3', :class => 'input-xxlarge', :required => true, :name => "question", :value => ""}
+            %tr
+              %td
+                Default Value
+              %td
+                %textarea{:rows => '3', :class => 'input-xxlarge', :name => "question_answer", :value => ""}
+
+      %input{:type => 'submit', :value => 'Save' }
+        %a{ :href => "/UDV_Worksheet/sheet"}
+      %input{ :type => "button", :value => 'Cancel'}
+  - else
+    %h3
+      Questions To Complete
+    %form{:method => 'post', :action => "/UDV_Worksheet/sheet?report_id=#{@report_id}"}
+      .table.table-striped
+        %table{:style => 'width: 40%'}
+          %tbody
+            %tr
+              %td
+                Question
+              %td
+                Answer
+            - if @questions
+              - if @questions.size > 0
+                - @questions.each do |item|
+                  %tr
+                    %td
+                      - if item['question']
+                        #{meta_markup(item['question'])}
+                    %td
+                      %textarea{:rows => '3', :class => 'input-xlarge', :name => "question_answer_#{item['id']}"}
+                        - if item['question_answer']
+                          #{meta_markup(item['question_answer'])}
+      %input{:type => "hidden", :name => "report_id", :value => "#{@report_id}"}
+      %input{:type => 'submit', :value => 'Save' }
+        %a{ :href => "/UDV_Worksheet/sheet"}
+      %input{ :type => "button", :value => 'Cancel'}

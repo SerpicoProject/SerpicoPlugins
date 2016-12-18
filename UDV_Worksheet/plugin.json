@@ -1,0 +1,8 @@
+{
+  "name": "UDV_Worksheet",
+  "description": "Worksheet for users. The answers become user defined variables.",
+  "link":"/UDV_Worksheet/sheet",
+  "enabled": false,
+  "report_view": true,
+  "admin_view": true
+}
