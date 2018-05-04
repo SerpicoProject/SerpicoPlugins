@@ -1,0 +1,8 @@
+{
+  "name": "ExcelToVariables",
+  "description": "Plugin to create UDVs and UDOs from Excel",
+  "link": "/excel_to_variables",
+  "enabled": true,
+  "report_view": true,
+  "admin_view": false
+}
