@@ -1,4 +1,7 @@
 require 'sinatra'
+require './plugins/TestPlugin/helpers/testplugin_listener'
+
+PluginNotifier.instance.attach_plugin(TestPluginListener.new)
 
 # List current reports
 get '/TestPlugin/hello' do
