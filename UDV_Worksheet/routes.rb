@@ -63,7 +63,7 @@ get '/UDV_Worksheet/sheet' do
 		end
 	end
 
-	haml :"../plugins/UDV_Worksheet/views/sheet", :encode_html => true
+	haml :"../plugins/UDV_Worksheet/views/sheet"
 end
 
 post '/UDV_Worksheet/sheet' do
@@ -97,7 +97,7 @@ post '/UDV_Worksheet/sheet' do
 			return "No Such Report"
 		end
 		@report_id = id
-		
+
 		data.each do |key,value|
 			if key =~ /question_answer/
 				q_id = key.split("_").last
@@ -130,5 +130,5 @@ post '/UDV_Worksheet/sheet' do
 	end
 
 	# redirect back to sheet display
-	haml :"../plugins/UDV_Worksheet/views/sheet", :encode_html => true
+	haml :"../plugins/UDV_Worksheet/views/sheet"
 end

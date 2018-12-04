@@ -7,7 +7,7 @@ get '/excel_to_variables' do
   @report = get_report(report_id)
   return 'No Such Report' if @report.nil?
 
-  haml :'../plugins/ExcelToVariables/views/excel_to_variables', encode_html: true
+  haml :'../plugins/ExcelToVariables/views/excel_to_variables'
 end
 
 # upload Excel file to be transformed in udvs and udos
@@ -154,7 +154,7 @@ post '/excel_to_variables' do
       end
     end
   end
-  haml :'../plugins/ExcelToVariables/views/excel_to_variables', encode_html: true
+  haml :'../plugins/ExcelToVariables/views/excel_to_variables'
 end
 
 # returns the shared string value of a sheet cell
